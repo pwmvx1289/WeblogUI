@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+  <title>Weblog Interface</title>
+  <meta name="generator" content="Bootply" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="http://bootswatch.com/paper/bootstrap.min.css">
+  <link href="https://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css" rel="stylesheet">
+    <!--[if lt IE 9]>
+      <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+      <![endif]-->
+      <link href="css/styles.css" rel="stylesheet">
+    </head>
+
+    <style type="text/css">
+    .label{
+      font-weight:normal;
+      font-size:90%;
+    }
+    .article{
+      margin-left:10%;
+    }
+    </style>
+
+    <body>
+      <header class="navbar navbar-default navbar-fixed-top" role="banner">
+        <div class="container">
+          <div class="navbar-header">
+            <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".navbar-collapse">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a href="index.html" class="navbar-brand">Weblog Interface</a>
+          </div>
+          <nav class="collapse navbar-collapse" role="navigation">
+            <ul class="nav navbar-nav">
+              <li>
+                <a href="create.html">Create</a>
+              </li>
+            </ul>
+            <ul class="nav navbar-right navbar-nav">
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="glyphicon glyphicon-search"></i></a>
+                <ul class="dropdown-menu" style="padding:12px;">
+                  <form class="form-inline">
+                    <button type="submit" class="btn btn-default pull-right"><i class="glyphicon glyphicon-search"></i></button><input type="text" class="form-control pull-left" placeholder="Search" style="width:75%">
+                  </form>
+                </ul>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </header>
+
+      <div id="masthead">  
+        <div class="container">
+          <div class="row">
+            <div class="col-md-7">
+              <h1>Weblog
+                <p class="lead">Feel free to create and edit articles</p>
+              </h1>
+            </div>
+            <div class="col-md-5">
+              <div class="well well-lg"> 
+                <div class="row">
+                  <div id="well-tags" class="col-sm-12">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div> 
+        </div><!-- /cont -->
+
+
+      </div>
+
+
+      <div class="container">
+        <div class="row">
+
+          <div class="col-md-12"> 
+
+            <div class="panel">
+              <div class="panel-body">
+
+
+                <!--/stories-->
+                <div id="article-area" class="row">    
+                  <!--<br>
+                  <div class="col-md-10 article">
+                    <h3>Post Entry Title</h3>
+                    <div class="row">
+                      <div class="col-xs-12">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis pharetra varius quam sit amet vulputate. 
+                          Quisque mauris augue, molestie tincidunt condimentum vitae, gravida a libero. Aenean sit amet felis 
+                          dolor, in sagittis nisi. Sed ac orci quis tortor imperdiet venenatis. Duis elementum auctor accumsan. 
+                          Aliquam in felis sit amet augue.</p>
+                          <p class="lead"><button class="btn btn-default">Read More</button></p>
+                          <p class="pull-right">
+                            <span class="label label-default">keyword</span> 
+                            <span class="label label-default">tag</span> 
+                            <span class="label label-default">post</span>
+                          </p>
+                          <ul class="list-inline"><li><a href="#">2 Days Ago</a></li></ul>
+                        </div>
+                      </div>
+                      <br><br>
+                    </div>-->
+                  </div>
+                  <hr>
+
+                  <!--/stories-->
+
+
+                  <a href="/" class="btn btn-primary pull-right btnNext">More <i class="glyphicon glyphicon-chevron-right"></i></a>
+
+
+                </div>
+              </div>
+
+
+
+            </div><!--/col-12-->
+          </div>
+        </div>
+
+
+        <hr>
+
+        <footer>
+          <div class="container">
+            <div class="row">
+              <div class="col-sm-6">
+                <ul class="list-inline">
+                  <li><i class="icon-facebook icon-2x"></i></li>
+                  <li><i class="icon-twitter icon-2x"></i></li>
+                  <li><i class="icon-google-plus icon-2x"></i></li>
+                </ul>
+
+              </div>
+              <div class="col-sm-6">
+                <p class="pull-right">Part of a <a href="https://www.google-melange.com/gci/homepage/google/gci2014">Google Code-in</a> task</p>      
+              </div>
+            </div>
+          </div>
+        </footer>
+        <!-- script references -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+      </body>
+
+      <script type="text/javascript">
+      var tags=[];
+      var articles={"articles":[]};
+
+      function getTags(){
+        /*Get an array of tags from the server*/
+        /*Currently feed in hard-coded data*/
+        tags.push ("tag");
+        tags.push ("weblog");
+        tags.push ("helloworld");
+        tags.push ("example");
+        tags.push ("ipsum");
+        tags.push ("lorem");
+        tags.push ("dolor");
+        tags.push ("sit");
+        tags.push ("amet");
+      }
+
+      function fillTags(){
+        var content="";
+        $.each(tags, function( index, value ) {
+          content+='<span class="label label-primary">'+value+'</span> ';
+        });
+        $("#well-tags").append(content);
+      }
+
+      function getArticles(){
+        /*Get an array of articles from the server*/
+        /*Currently feed in hard-coded data*/
+        articles.articles.push ({"id":"0", "author":"John", "title":"First article", "content":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis pharetra varius quam sit amet vulputate. ", "date":"12th Jan 2014", "tags":["tag", "example", "ipsum"]});
+        articles.articles.push ({"id":"1", "author":"Peter", "title":"Second article", "content":"Quisque mauris augue, molestie tincidunt condimentum vitae, gravida a libero.", "date":"11th Jan 2015", "tags":["tag", "example", "lorem"]});
+      }
+
+      function fillArticles(){
+        var content="";
+        $.each(articles.articles, function( index, value ) {
+          //content+='<span class="label label-primary">'+value.author+'</span> ';
+          content+='<br> <div class="col-md-10 article" article-id="'+value.id+'"> <h3>'+value.title+'</h3> <div class="row"> <div class="col-xs-12"> <p>'+value.content+'</p> <p class="lead"><button class="btn btn-default">Read More</button></p> <p class="pull-right">';
+          $.each (value.tags, function ( index, tag ) {
+            content+='<span class="label label-default">'+tag+'</span> ';
+          });
+          content+='</p> <ul class="list-inline"><li><span>By '+value.author+' - on '+value.date+'</span></li></ul> </div> </div> <br><br> </div><hr>';
+        });
+        $("#article-area").append(content);
+      }
+
+      $( document ).ready(function() {
+        getTags();
+        fillTags();
+        getArticles();
+        fillArticles();
+      });
+      </script>
+
+      </html>
