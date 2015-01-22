@@ -186,6 +186,10 @@
         /*Currently feed in hard-coded data*/
         articles.articles.push ({"id":"0", "author":"John", "title":"First article", "content":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis pharetra varius quam sit amet vulputate. ", "date":"12th Jan 2014", "tags":["tag", "example", "ipsum"]});
         articles.articles.push ({"id":"1", "author":"Peter", "title":"Second article", "content":"Quisque mauris augue, molestie tincidunt condimentum vitae, gravida a libero.", "date":"11th Jan 2015", "tags":["tag", "example", "lorem"]});
+         var article=JSON.parse(sessionStorage.articles);
+         $.each (article.articles, function ( index, content) {
+            articles.articles.push (content);
+          });
       }
 
       function fillArticles(){
